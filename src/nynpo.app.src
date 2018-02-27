@@ -1,0 +1,7 @@
+{application, nynpo,
+   [{description, "NYNJA BOT"},
+    {vsn, "1"},
+    {registered, []},
+    {applications, [kernel,stdlib,mnesia]},
+    {mod, { nynpo, []}},
+    {env, []} ]}.
