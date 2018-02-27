@@ -35,7 +35,10 @@ Build
 
 ```sh
 $ ./nynpo dep com pla
+$ ./nynpo release script nynpo
 ```
+
+Tha last command will recreate `nynpo` escript executable runnable by Erlang ERTS.
 
 Credits
 -------
