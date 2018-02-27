@@ -33,11 +33,12 @@ proc({timer,ping},#handler{state=Timer}=Async) ->
 
 process_room(Room) ->
     APIKEY = application:get_env(nynpo,bot,"548231922:AAHmXMMr38XGtH0tJMDUdiByheT2mZ7qkVI"),
-    {_,{_,_,Res}} = httpc:request(get, {"https://api.telegram.org/bot"++APIKEY++"/getChat?chat_id=@"++Room, []}, [], []),
+    End = "https://api.telegram.org/bot",
+    {_,{_,_,Res}} = httpc:request(get, {End++APIKEY++"/getChat?chat_id=@"++Room, []}, [], []),
     {{D,M,Y},{H,Min,S}} = {date(),time()},
     #{<<"result">> := #{<<"id">> := Id_}} = jsone:decode(list_to_binary(Res)),
     Id = io_lib:format("~p",[Id_]),
-    {_,{_,_,Res2}} = httpc:request(get, {"https://api.telegram.org/bot"++APIKEY++"/getChatMembersCount?chat_id="++Id, []}, [], []),
+    {_,{_,_,Res2}} = httpc:request(get, {End++APIKEY++"/getChatMembersCount?chat_id="++Id, []}, [], []),
     #{<<"result">> := Count} = jsone:decode(list_to_binary(Res2)),
     Time = io_lib:format("~w/~w/~w, ~w:~w:~w",[D,M,Y,H,Min,S]),
     Print = io_lib:format("~s, ~p, ~s, ~p~n",[Time,Room,Id,Count]),
