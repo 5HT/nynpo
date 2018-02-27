@@ -1,8 +1,7 @@
 Nynpo Telegram Bot
 ==================
 
-Sample Erlang Telegram Bot that counts number of users in particular channel or group and records it to files in CSV format.
-Extend it to your needs.
+Sample of [N2O_ASYNC](https://mqtt.n2o.space/man/n2o_async.htm) usage as Telegram Bot that counts number of users in particular channel or group and records it to files in CSV format. Extend it to your needs.
 
 Options
 -------
