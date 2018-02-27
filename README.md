@@ -1,7 +1,8 @@
-Counter Telegram Bot
-====================
+Nynpo Telegram Bot
+==================
 
-Simply count number of users in particular channel or group and record it to files in CSV format.
+Sample Erlang Telegram Bot that counts number of users in particular channel or group and records it to files in CSV format.
+Extend it to your needs.
 
 Options
 -------
