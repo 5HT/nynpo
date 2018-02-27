@@ -5,6 +5,8 @@
 -include_lib("n2o/include/wf.hrl").
 -include("telegram.hrl").
 
+main(A) -> mad:main(A).
+
 log_level()   -> info.
 log_modules() -> [nynpo].
 
@@ -39,6 +41,7 @@ process_room(Room) ->
     #{<<"result">> := Count} = jsone:decode(list_to_binary(Res2)),
     Time = io_lib:format("~w/~w/~w, ~w:~w:~w",[D,M,Y,H,Min,S]),
     Print = io_lib:format("~s, ~p, ~s, ~p~n",[Time,Room,Id,Count]),
+    io:format(Print),
     file:write_file(Room, list_to_binary(Print), [write,append]),
     ok.
 
