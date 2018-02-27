@@ -34,7 +34,6 @@ Build
 -----
 
 ```sh
-$ brew install erlang
 $ ./nynpo dep com pla
 ```
 
