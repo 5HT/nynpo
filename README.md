@@ -30,6 +30,14 @@ $ cat HaskellRu
 2018/2/27, 10:52:57, "HaskellRu", -1001043143583, 670
 ```
 
+Build
+-----
+
+```sh
+$ brew install erlang
+$ ./nynpo dep com pla
+```
+
 Credits
 -------
 * Maxim Sokhatsky
